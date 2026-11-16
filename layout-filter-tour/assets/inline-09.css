@@ -24,7 +24,7 @@ iframe { color-scheme: auto; }
 .carrotquest-css-reset iframe, .carrotquest-css-reset-frame iframe { max-height: none; max-width: none; }
 .carrotquest-message-mobil-noscroll { position: fixed !important; overflow: hidden !important; width: 100% !important; height: 100% !important; }
 .carrot-popup-frame { position: fixed !important; inset: 0px !important; z-index: 2147483000 !important; display: block !important; width: 100% !important; height: 100% !important; animation: 0.25s ease 0s 1 normal none running carrotquest-fadein !important; }
-@keyframes carrotquest-fadein { 
+@keyframes carrotquest-fadein {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
@@ -52,12 +52,12 @@ iframe { color-scheme: auto; }
   .carrot-messenger-frame-container.data-truncate-visibility { min-height: 411px !important; margin-top: 0px !important; }
 }
 .carrotquest-messenger-line-anim { animation-name: carrotquest-messenger-line-anim-right !important; animation-duration: 0.15s !important; animation-timing-function: cubic-bezier(0, 0, 0.2, 1) !important; }
-@keyframes carrotquest-messenger-line-anim-right { 
+@keyframes carrotquest-messenger-line-anim-right {
   0% { opacity: 0; transform: scale(0.6) translate(124px, 320px); }
   100% { opacity: 1; transform: scale(1) translate(0px); }
 }
 .carrotquest-messenger-line-left { animation-name: carrotquest-messenger-line-anim-left !important; }
-@keyframes carrotquest-messenger-line-anim-left { 
+@keyframes carrotquest-messenger-line-anim-left {
   0% { opacity: 0; transform: scale(0.6) translate(-124px, 320px); }
   100% { opacity: 1; transform: scale(1) translate(0px); }
 }
