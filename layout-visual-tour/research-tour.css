@@ -1,0 +1,41 @@
+/* One shared tour layer for the list and material settings. */
+.research-launcher { color: var(--ui-accent-strong); border: 0; background: transparent; padding: 8px 10px; border-radius: var(--ui-control-radius); font: 500 13px/20px var(--ui-font); white-space: nowrap; cursor: pointer; }
+.research-launcher:hover { background: var(--ui-accent-soft); }
+.research-dialog, .research-coach { color: var(--ui-ink); font: 14px/1.5 var(--ui-font); background: var(--ui-surface); border: 1px solid var(--ui-border); border-radius: 16px; box-shadow: var(--ui-popup-shadow); box-sizing: border-box; }
+.research-dialog { width: min(480px, calc(100vw - 32px)); padding: 28px; max-height: calc(100dvh - 32px); overflow: auto; }
+.research-dialog::backdrop { background: rgb(25 32 46 / 34%); backdrop-filter: blur(3px); }
+.research-eyebrow { color: var(--ui-muted); font-size: 12px; margin: 0 0 10px; }
+.research-dialog h2 { font-size: 24px; line-height: 1.25; letter-spacing: -.4px; margin: 0 0 14px; }
+.research-dialog p { margin: 0 0 14px; }
+.research-dialog .research-note { color: var(--ui-muted); font-size: 12px; }
+.research-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 20px; }
+.research-button { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 8px 14px; border: 0; border-radius: 12px; font: 500 13px/20px var(--ui-font); color: var(--ui-ink); background: var(--ui-bg); cursor: pointer; text-decoration: none; }
+.research-button:hover { background: var(--ui-border); }
+.research-button.primary { color: var(--ui-surface); background: var(--ui-accent-strong); }
+.research-button.primary:hover { filter: brightness(.94); }
+.research-button:disabled { opacity: .45; cursor: default; }
+.research-button.ghost { background: transparent; color: var(--ui-muted); }
+.research-dialog button:focus-visible, .research-coach button:focus-visible, .research-launcher:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 3px; }
+.research-coach { position: fixed; z-index: 1002; width: min(348px, calc(100vw - 24px)); padding: 20px; max-height: calc(100dvh - 24px); overflow: auto; }
+.research-coach[hidden], .research-highlight[hidden], .research-status[hidden] { display: none; }
+/* The overview occupies the navigation rail, leaving both work columns visible. */
+.research-coach.research-overview { width: 200px; padding: 16px; }
+.research-overview .research-explore, .research-overview [data-prev] { display: none; }
+.research-overview h2 { margin-right: 0; }
+.research-coach h2 { font: 600 18px/1.35 var(--ui-font); margin: 0 24px 8px 0; }
+.research-coach p { margin: 0; }
+.research-coach .research-eyebrow { margin-bottom: 8px; }
+.research-coach .research-actions { margin-top: 16px; }
+.research-coach .research-close { position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; border: 0; background: transparent; color: var(--ui-muted); font: 22px/1 var(--ui-font); border-radius: 8px; cursor: pointer; }
+.research-close:hover { background: var(--ui-bg); }
+.research-explore { display: block; margin-top: 12px; font: 12px/1.5 var(--ui-font); color: var(--ui-muted); }
+.research-demo { margin-top: 12px; color: var(--ui-accent-strong); background: var(--ui-accent-soft); }
+.filter-study-coach .filter-study-task { margin-top: 12px; color: var(--ui-muted); font-size: 12px; }
+.filter-study-coach .filter-study-task.is-complete { color: var(--ui-accent-strong); }
+.filter-study-coach .research-button.outline { border: 1px solid var(--ui-border); color: var(--ui-ink); background: var(--ui-surface); }
+.filter-study-coach .research-button.outline:hover { background: var(--ui-bg); }
+.research-highlight { position: fixed; z-index: 1000; pointer-events: none; border: 2px solid var(--ui-accent); border-radius: 14px; box-shadow: 0 0 0 4px var(--ui-accent-soft); box-sizing: border-box; }
+.research-status { position: fixed; bottom: 20px; right: 20px; max-width: min(380px, calc(100vw - 40px)); padding: 12px 16px; background: var(--ui-ink); color: var(--ui-surface); border-radius: 12px; z-index: 1003; font: 13px/1.5 var(--ui-font); box-shadow: var(--ui-popup-shadow); }
+[data-research-blocked] { cursor: default !important; }
+@media (max-width: 620px) { .research-launcher { font-size: 12px; padding: 4px; } .research-coach { padding: 16px; } }
+@media (prefers-reduced-motion: reduce) { .research-highlight, .research-coach { scroll-behavior: auto; } }

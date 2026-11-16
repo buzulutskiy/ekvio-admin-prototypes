@@ -1,0 +1,12 @@
+.site-button { background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px; border: 1px solid transparent; border-radius: 2px; }
+.site-button:hover { border-color: var(--primary-color-500); background-color: rgb(255, 255, 255); }
+.site-button:active { border-color: var(--primary-color-500); background-color: rgb(243, 243, 243); }
+.full-height { display: flex; flex-direction: column; height: 100%; flex-grow: 1; }
+.content-section-base__chevron--opened { transform: rotate(180deg); }
+.content-section-base__content-wrapper { margin-top: 20px; }
+.content-section-base__header { width: 100%; }
+.content-section-base__header-left { cursor: pointer; user-select: none; }
+.content-section-base__header-left-name { font-size: 20px; font-weight: 700; color: var(--overlay-color-90); margin-left: 12px; }
+.content-section-base__header-left-count { font-size: 20px; font-weight: 400; color: var(--overlay-color-40); margin-left: 5px; }
+.content-section-base .slide-enter-active, .content-section-base .slide-leave-active { transition: 0.3s; }
+.content-section-base .slide-enter, .content-section-base .slide-leave-to { opacity: 0; transform: translateY(30px); }

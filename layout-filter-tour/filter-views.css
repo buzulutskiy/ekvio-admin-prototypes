@@ -1,0 +1,106 @@
+/* Variant 2: the existing shell, a separate layer for reusable conditions. */
+.layout-b.filter-views .list-workspace { display:flex; flex-direction:column; gap:var(--ui-panel-gap); align-items:stretch; }
+.layout-b.filter-views .table-surface { flex:1; min-height:0; height:auto; }
+.lf-panel { flex:none; background:var(--ui-surface); border-radius:20px; }
+.lf-top { display:flex; align-items:center; gap:16px; padding:10px 14px; border-bottom:1px solid var(--ui-border); min-height:60px; }
+.lf-tabs { display:flex; gap:4px; }
+.lf-tabs button { height:40px; padding:0 16px; border:0; border-radius:12px; background:transparent; color:var(--ui-muted); font-size:14px; white-space:nowrap; }
+.lf-tabs button[aria-selected=true] { background:var(--ui-accent); color:white; font-weight:500; }
+.lf-tabs button:not([aria-selected=true]):hover { background:var(--ui-bg); }
+.lf-admin-select { margin-left:auto; display:flex; align-items:center; gap:10px; font-size:13px; color:var(--ui-muted); }
+.lf-admin-select select { width:220px; }
+.lf-toolbar { display:flex; align-items:center; gap:10px; padding:10px 16px; min-height:60px; }
+.lf-toolbar button { border:0; border-radius:10px; min-height:36px; padding:7px 10px; font-size:13px; background:transparent; line-height:20px; }
+.lf-view-list button:hover,.lf-toolbar button:hover { background:var(--ui-bg); }
+.lf-view-list button:focus-visible,.lf-panel button:focus-visible,.lf-dialog button:focus-visible { outline:2px solid var(--ui-focus); outline-offset:2px; }
+.lf-view-button,.lf-view-item { display:flex; align-items:center; gap:8px; }
+.lf-toolbar .lf-view-button { padding-inline:12px; color:var(--ui-ink); font-weight:500; }
+.lf-view-button svg { width:16px; height:16px; color:var(--ui-muted); }
+.lf-panel svg,.lf-dialog svg { fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; flex:none; }
+.lf-divider { height:20px; width:1px; background:var(--ui-border); }
+.lf-add { color:var(--ui-muted); }
+.lf-add>span { font-size:20px; vertical-align:-1px; }
+.lf-save-actions { margin-left:auto; display:flex; align-items:center; gap:8px; }
+.lf-dirty { color:var(--ui-muted); font-size:12px; white-space:nowrap; }
+.lf-toolbar .lf-save { color:var(--ui-accent-strong); background:var(--ui-accent-soft); font-weight:500; }
+.lf-toolbar .lf-reset { color:var(--ui-muted); }
+.lf-conditions { padding:0 16px 12px; display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+.lf-condition { display:inline-flex; align-items:center; border:1px solid var(--ui-border); border-radius:12px; overflow:hidden; max-width:100%; }
+.lf-condition>button { border:0; background:transparent; min-height:36px; color:var(--ui-ink); font-size:13px; padding:7px 10px; }
+.lf-condition>button:hover { background:var(--ui-bg); }
+.lf-condition>button:first-child { display:flex; gap:6px; align-items:center; min-width:0; }
+.lf-condition-key { color:var(--ui-muted); white-space:nowrap; }
+.lf-condition-value { max-width:280px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:500; }
+.lf-condition>button:last-child { color:var(--ui-muted); font-size:18px; padding:5px 10px 5px 4px; }
+.lf-condition-and { font-size:11px; color:var(--ui-muted); padding:0 2px; }
+.lf-dialog { padding:0; border:1px solid var(--ui-border); border-radius:16px; color:var(--ui-ink); background:white; box-shadow:var(--ui-popup-shadow); width:348px; max-width:calc(100vw - 32px); max-height:calc(100dvh - 32px); margin:0; position:fixed; }
+.lf-dialog::backdrop { background:transparent; }
+.lf-dialog header { display:flex; align-items:center; gap:10px; padding:12px 14px; font-size:14px; }
+.lf-dialog header strong { font-weight:600; }
+.lf-dialog header button { background:transparent; border:0; color:var(--ui-muted); height:28px; min-width:28px; border-radius:8px; font-size:24px; }
+.lf-close { margin-left:auto; }
+.lf-dialog header button:hover { background:var(--ui-bg); }
+.lf-find { margin:0 12px 8px; display:flex; gap:8px; align-items:center; border:1px solid var(--ui-border); border-radius:12px; padding:0 10px; height:40px; }
+.lf-find:focus-within { outline:2px solid var(--ui-focus); outline-offset:1px; }
+.lf-find svg { width:18px; height:18px; color:var(--ui-muted); }
+.lf-find input { border:0!important; box-shadow:none!important; outline:none!important; padding:0!important; height:36px; width:100%; background:transparent; font-size:13px; color:var(--ui-ink); }
+.lf-picker-list { max-height:320px; overflow:auto; padding:4px 8px 8px; }
+.lf-picker-item { display:flex; align-items:center; gap:10px; padding:10px; min-height:40px; width:100%; border:0; border-radius:10px; background:white; font-size:13px; text-align:left; color:var(--ui-ink); cursor:pointer; }
+.lf-picker-item:hover { background:var(--ui-bg); }
+.lf-picker-item>span:first-of-type { flex:1; overflow-wrap:anywhere; }
+.lf-picker-item>small { color:var(--ui-muted); font-size:12px; }
+.lf-picker-item input { appearance:auto; accent-color:var(--ui-accent); width:18px; height:18px; margin:0; flex:none; }
+.lf-picker-empty { padding:16px; margin:0; font-size:13px; color:var(--ui-muted); }
+.lf-dialog footer { border-top:1px solid var(--ui-border); padding:12px; display:flex; align-items:center; gap:12px; justify-content:space-between; }
+.lf-dialog footer>span { font-size:11px; color:var(--ui-muted); }
+.lf-dialog footer button { border:0; border-radius:10px; height:36px; padding:0 14px; background:var(--ui-accent); color:white; font-size:13px; }
+.lf-note { font-size:12px; line-height:18px; color:var(--ui-muted); margin:0; }
+.lf-views-dialog>.lf-note { padding:12px 16px; border-top:1px solid var(--ui-border); }
+.lf-view-list { padding:0 8px 8px; max-height:350px; overflow:auto; }
+.lf-view-row { display:flex; align-items:center; gap:2px; border-radius:10px; }
+.lf-view-row.is-selected { background:var(--ui-bg); }
+.lf-view-item { flex:1; padding:10px; background:transparent; border:0; border-radius:10px; text-align:left; font-size:13px; min-width:0; color:var(--ui-ink); }
+.lf-view-item>span:first-child { width:18px; color:var(--ui-accent); }
+.lf-view-item>span:last-child { overflow-wrap:anywhere; }
+.lf-delete-view { width:30px; height:30px; margin-right:4px; border:0; border-radius:8px; background:transparent; color:var(--ui-muted); font-size:18px; }
+.lf-save-dialog { width:400px; }
+.lf-save-dialog::backdrop { background:rgb(25 32 46 / 20%); }
+.lf-save-dialog form { margin:0; }
+.lf-save-dialog form>label { display:block; padding:4px 16px 8px; font-size:13px; }
+.lf-save-dialog form>input { display:block; width:calc(100% - 32px); height:40px; border:1px solid var(--ui-border); border-radius:12px; margin:0 16px; padding:0 12px; font-size:14px; }
+.lf-save-dialog form>.lf-note { margin:12px 16px 16px; }
+.lf-save-dialog footer { justify-content:flex-end; }
+.lf-save-dialog footer>button:first-child { color:var(--ui-muted); background:var(--ui-bg); }
+#lf-save-error { color:#ba3333; margin:8px 16px; font-size:12px; }
+.lf-toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); padding:12px 18px; border-radius:12px; background:var(--ui-ink); color:white; font-size:13px; z-index:10000; box-shadow:var(--ui-popup-shadow); }
+.lf-pagination,.lf-pagination button,.lf-pagination select { font-size:13px; color:var(--ui-ink); }
+.lf-pagination { display:flex; align-items:center; gap:4px; width:100%; }
+.lf-pagination button { border:0; background:transparent; border-radius:6px; height:30px; min-width:30px; display:grid; place-items:center; }
+.lf-pagination button.active { color:var(--ui-accent-strong); background:var(--ui-accent-soft); }
+.lf-pagination button:disabled { color:#c5cad4; cursor:default; }
+.lf-pagination .lf-result-range { margin-left:12px; color:var(--ui-muted); font-size:12px; }
+.lf-pagination select { margin-left:auto; border:0; border-radius:8px; height:32px; background:white; padding:0 10px; }
+.lf-pagination select:hover { background:var(--ui-bg); }
+.lf-admin-select select { background:white; border:1px solid var(--ui-border); border-radius:12px; height:40px; color:var(--ui-ink); font-size:13px; padding:0 10px; }
+.lf-empty { position:sticky; left:0; width:100%; padding:50px 24px; text-align:center; }
+.lf-empty strong,.lf-empty span { display:block; font-size:14px; margin-bottom:10px; }
+.lf-empty span { color:var(--ui-muted); font-size:13px; }
+.lf-empty button { padding:8px 12px; border:0; border-radius:10px; background:var(--ui-accent-soft); color:var(--ui-accent-strong); font-size:13px; }
+.filter-views [hidden] { display:none!important; }
+@media(max-width:1100px) { .lf-dirty { display:none; } .lf-save-actions { gap:2px; } .lf-condition-value { max-width:200px; } }
+/* The alternative has a top filtering layer and a full-width table. */
+.layout-b.filter-views .list-workspace { display:flex; flex-direction:column; gap:4px; align-items:stretch; }
+.layout-b.filter-views .table-surface { flex:1; height:auto; min-height:0; }
+.lf-panel { flex-shrink:0; border-radius:20px; background:var(--ui-surface); }
+.lf-top { padding:10px 16px; display:flex; gap:16px; align-items:center; border-bottom:1px solid var(--ui-border); }
+.lf-tabs { display:flex; align-items:center; gap:4px; }
+.lf-tabs button { min-height:40px; padding:8px 14px; border:0; border-radius:12px; font-size:14px; font-weight:500; background:transparent; color:var(--ui-muted); }
+.lf-tabs button[aria-selected=true] { background:var(--ui-accent); color:white; }
+.lf-tabs button[aria-selected=false]:hover { background:var(--ui-bg); }
+.lf-top .lf-admin-select { margin-left:auto; }
+.lf-toolbar { display:flex; align-items:center; gap:8px; padding:8px 10px; }
+.lf-divider { width:1px; height:20px; background:var(--ui-border); }
+.lf-panel svg { width:16px; height:16px; stroke:currentColor; stroke-width:1.7; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+
+/* A long condition list must not squeeze the table to a strip. */
+.layout-b.filter-views .table-surface { min-height:340px; }

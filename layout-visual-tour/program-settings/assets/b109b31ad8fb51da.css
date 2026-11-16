@@ -1,0 +1,10 @@
+.site-button { background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px; border: 1px solid transparent; border-radius: 2px; }
+.site-button:hover { border-color: var(--primary-color-500); background-color: rgb(255, 255, 255); }
+.site-button:active { border-color: var(--primary-color-500); background-color: rgb(243, 243, 243); }
+.full-height { display: flex; flex-direction: column; height: 100%; flex-grow: 1; }
+.learning-program__controls-wrapper { margin-top: 32px; }
+.learning-program__tab-controls { width: 100%; border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; margin-top: 0px; }
+.learning-program__right-controls { width: auto; white-space: nowrap; }
+.learning-program__right-controls .hint-description { margin-bottom: 3px; margin-left: 18px; }
+.learning-program__clock-icon { color: var(--overlay-color-40); margin-right: 1px; }
+.learning-program__study-time { margin-bottom: 3px; }

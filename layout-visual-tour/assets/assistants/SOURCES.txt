@@ -1,0 +1,5 @@
+Assistant logos: Lobe Icons, https://github.com/lobehub/lobe-icons
+packages/static-svg/icons/{claude,openai,codex}.svg
+Used only in the local prototype to identify assistants. No connection or endorsement is implied.
+
+Local colour treatments: Claude terracotta, ChatGPT green, Codex blue. Colours distinguish the marks in this concept; they are not a verified official brand palette.

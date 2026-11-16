@@ -1,0 +1,28 @@
+.content-add-material { padding: 32px; }
+.content-add-material__close { color: var(--overlay-color-40); }
+.content-add-material__content { display: inline-block; width: 100%; }
+.content-add-material__tabs { float: left; margin-right: 45px; }
+.content-add-material__select-btn { margin-left: 10px; }
+.content-add-material__materials { float: right; width: 85%; }
+.content-add-material__materials-wrapper { margin-top: 0px; min-width: 598px; }
+.content-add-material__table { min-width: 598px; }
+.content-add-material__table .ui-tab__content-wrapper { max-height: 450px; }
+@media screen and (max-width: 1366px) {
+  .content-add-material__table .ui-tab__content-wrapper { max-height: 300px; }
+}
+.content-add-material__table__paginator { margin-bottom: 0px; }
+.settings-cell { display: none; }
+.ek-table-row .lock-cell__icon { display: block; color: var(--secondary-color-500); }
+.ek-table-row .lock-cell__icon:hover { cursor: pointer; }
+.site-button { background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px; border: 1px solid transparent; border-radius: 2px; }
+.site-button:hover { border-color: var(--primary-color-500); background-color: rgb(255, 255, 255); }
+.site-button:active { border-color: var(--primary-color-500); background-color: rgb(243, 243, 243); }
+.full-height { display: flex; flex-direction: column; height: 100%; flex-grow: 1; }
+.learning-program-content { margin: 16px 0px 30px; }
+.learning-program-content__dropdown { padding: var(--spacing-sm-4); background-color: var(--base-color-white); box-shadow: var(--shadow-lg); }
+.learning-program-content__sections-block-wrap, .learning-program-content__sections-wrap { display: flex; flex-direction: column; gap: var(--spacing-md-2); }
+.learning-program-content__required-wrapper { position: relative; }
+.learning-program-content__check-required { top: 0px; width: 180px; height: 20px; position: absolute; z-index: 1000; }
+.list-enter-active, .list-leave-active { transition: 0.3s; }
+.list-enter, .list-leave-to { opacity: 0; transform: translateY(30px); }
+.list-move { transition: transform 0.3s; }

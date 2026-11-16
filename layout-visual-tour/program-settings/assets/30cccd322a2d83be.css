@@ -1,0 +1,19 @@
+.user-filter-textfield__title { font-size: 14px; word-break: break-word; white-space: normal; line-height: 24px; margin-bottom: var(--spacing-sm-3); color: var(--neutral-color-900); }
+.user-filter-textfield__content { position: relative; }
+.user-filter-textfield .user-filter-textfield__clear { position: absolute; top: 50%; transform: translateY(-50%); right: 7px; color: var(--primary-color-500); cursor: pointer; }
+.site-button { background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px; border: 1px solid transparent; border-radius: 2px; }
+.site-button:hover { border-color: var(--primary-color-500); background-color: rgb(255, 255, 255); }
+.site-button:active { border-color: var(--primary-color-500); background-color: rgb(243, 243, 243); }
+.full-height { display: flex; flex-direction: column; height: 100%; flex-grow: 1; }
+.company-user-form-filter-menu__textfield { padding-left: var(--spacing-sm-8); }
+.company-user-form-filter-menu__textfield:not(.company-user-form-filter-menu__textfield:last-child) { margin-bottom: var(--spacing-sm-6); }
+.company-user-form-filter-menu__textfield .form__input { height: auto; padding: var(--spacing-sm-4) var(--spacing-sm-6); border-radius: var(--radius-md); border: var(--border-xs) solid var(--neutral-color-300); box-sizing: border-box; }
+.company-user-form-filter-menu__main { background-color: var(--base-color-white); }
+.company-user-form-filter-menu__main > .ek-collapse__content { padding-bottom: 0px; }
+.company-user-form-filter-menu__main > .ek-collapse__content .ek-collapse__header { margin-top: -4px; padding-top: 0px; padding-right: 0px; }
+.company-user-form-filter-menu__submenu { border: unset; }
+.company-user-form-filter-menu__submenu:not(.company-user-form-filter-menu__submenu:last-child) { margin-bottom: var(--spacing-sm-3); }
+.company-user-form-filter-menu__submenu .ek-collapse__header { color: var(--neutral-color-900); }
+.company-user-form-filter-menu__submenu .ek-collapse__content { padding-right: 0px; }
+.company-user-form-filter-menu__submenu .ek-collapse__content:not(.company-user-form-filter-menu__submenu .ek-collapse__content:last-child) { padding-bottom: var(--spacing-sm-3); }
+.company-user-form-filter-menu__spiner { display: flex; justify-content: center; margin-bottom: 8px; }

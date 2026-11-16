@@ -1,0 +1,23 @@
+:root {
+  --ui-bg: #f0f1f5;
+  --ui-surface: #ffffff;
+  --ui-hover: #f5f3fa;
+  --ui-border: #e4e6ec;
+  --ui-ink: #19202e;
+  --ui-muted: #667080;
+  --ui-accent: #9254ed;
+  --ui-accent-strong: #7938d2;
+  --ui-accent-soft: #f1e9ff;
+  --ui-disabled-bg: #f0f1f4;
+  --ui-disabled-ink: #7c8491;
+  --ui-focus: #7134c4;
+  --ui-radius: 14px;
+  --ui-control-radius: 8px;
+  --ui-space: 8px;
+  --ui-panel-gap: 4px;
+  --ui-menu-width: 208px;
+  --ui-rail-width: 52px;
+  --ui-font: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ui-popup-shadow: 0 8px 28px rgb(28 21 47 / 13%);
+  --ui-scroll-thumb: #b6bbc7;
+}

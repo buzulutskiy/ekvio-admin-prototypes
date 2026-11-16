@@ -1,0 +1,12 @@
+.site-button { background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px; border: 1px solid transparent; border-radius: 2px; }
+.site-button:hover { border-color: var(--primary-color-500); background-color: rgb(255, 255, 255); }
+.site-button:active { border-color: var(--primary-color-500); background-color: rgb(243, 243, 243); }
+.full-height { display: flex; flex-direction: column; height: 100%; flex-grow: 1; }
+.content-section__content-wrapper { margin-top: 20px; }
+.content-section__header-right-position { margin-right: 16px; cursor: pointer; transform: rotate(180deg); color: var(--neutral-color-400); }
+.content-section__header-right-position:hover { color: var(--neutral-color-500); }
+.content-section__header-right-position--down { transform: rotate(0deg); }
+.content-section__dots-popover { width: 18px; margin-right: 18px; display: flex; align-items: center; cursor: pointer; }
+.content-section__dots-popover .draggable-dots__dot { background-color: var(--overlay-color-20); }
+.content-section__dots-popover .trigger { width: 18px; margin-right: 18px; }
+.content-section__dots-popover:hover .draggable-dots__dot { background-color: var(--overlay-color-40); }

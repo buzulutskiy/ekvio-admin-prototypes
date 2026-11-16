@@ -1,0 +1,11 @@
+.learning-program-rating-card__content { margin-top: 28px; }
+.learning-program-rating-card__rate { margin-bottom: 28px; }
+.learning-program-rating-card__title { font: var(--font-md-semibold); }
+.learning-program-rating-card__comment { font: var(--font-sm-reg); margin-top: 10px; }
+.site-button { background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px; border: 1px solid transparent; border-radius: 2px; }
+.site-button:hover { border-color: var(--primary-color-500); background-color: rgb(255, 255, 255); }
+.site-button:active { border-color: var(--primary-color-500); background-color: rgb(243, 243, 243); }
+.full-height { display: flex; flex-direction: column; height: 100%; flex-grow: 1; }
+.learning-program-rating { margin: 22px 0px; }
+.learning-program-rating__table { position: relative; }
+.learning-program-rating__table-wrapper { margin-top: 0px; }

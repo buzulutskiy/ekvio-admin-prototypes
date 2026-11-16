@@ -1,0 +1,71 @@
+#carrotquest-messenger-collapsed-container { position: fixed !important; z-index: 2147483000 !important; max-width: 90% !important; }
+#carrotquest-messenger-collapsed-container.carrotquest-messenger-right_top { top: 0px !important; right: 0px !important; }
+#carrotquest-messenger-collapsed-container.carrotquest-messenger-right_bottom { right: 0px !important; bottom: 0px !important; }
+#carrotquest-messenger-collapsed-container.carrotquest-messenger-left_top { top: 0px !important; left: 0px !important; }
+#carrotquest-messenger-collapsed-container.carrotquest-messenger-left_bottom { bottom: 0px !important; left: 0px !important; }
+#carrotquest-messenger-collapsed-container #chat-container { display: flex !important; }
+#carrotquest-messenger-collapsed-container.carrotquest-messenger-right_bottom #chat-container, #carrotquest-messenger-collapsed-container.carrotquest-messenger-right_top #chat-container { flex-direction: row-reverse !important; }
+#carrotquest-messenger-collapsed-container.carrotquest-messenger-right_bottom #chat-container, #carrotquest-messenger-collapsed-container.carrotquest-messenger-left_bottom #chat-container { align-items: flex-end !important; }
+#carrotquest-messenger-collapsed-container.carrotquest-messenger-right_top #chat-container, #carrotquest-messenger-collapsed-container.carrotquest-messenger-left_top #chat-container { align-items: flex-start !important; }
+#carrotquest-messenger-collapsed-container #icon-container { flex-shrink: 0; z-index: 1; width: 80px !important; min-width: 80px !important; height: 80px !important; }
+#carrotquest-messenger-collapsed-container #tooltip-container { position: relative; flex-shrink: 1; max-width: 300px; height: 146px; max-height: 146px; margin-top: auto; margin-bottom: auto; }
+#carrotquest-messenger-collapsed-container.carrotquest-messenger-right_bottom #tooltip-container, #carrotquest-messenger-collapsed-container.carrotquest-messenger-right_top #tooltip-container { margin-right: -20px; }
+#carrotquest-messenger-collapsed-container.carrotquest-messenger-left_bottom #tooltip-container, #carrotquest-messenger-collapsed-container.carrotquest-messenger-left_top #tooltip-container { margin-left: -20px; }
+#carrotquest-messenger-collapsed-container #carrot-messenger-tooltip, #carrot-messenger-collapsed-frame { user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 100% !important; height: 100% !important; }
+iframe { color-scheme: auto; }
+#popup-container { position: fixed; top: 0px; width: 385px; height: 100%; max-height: 100%; z-index: 2147483000; }
+#popup-container.right { right: 0px; }
+#popup-container.left { left: 0px; }
+#popup-container * { user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+#popup-container iframe, #popup-container div, #popup-container span, #popup-container a, #popup-container button { margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; }
+#popup-container iframe { max-height: none; max-width: none; }
+.carrotquest-css-reset *, .carrotquest-css-reset-frame * { user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+.carrotquest-css-reset iframe, .carrotquest-css-reset div, .carrotquest-css-reset span, .carrotquest-css-reset a, .carrotquest-css-reset button, .carrotquest-css-reset-frame iframe, .carrotquest-css-reset-frame div, .carrotquest-css-reset-frame span, .carrotquest-css-reset-frame a, .carrotquest-css-reset-frame button { margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; }
+.carrotquest-css-reset iframe, .carrotquest-css-reset-frame iframe { max-height: none; max-width: none; }
+.carrotquest-message-mobil-noscroll { position: fixed !important; overflow: hidden !important; width: 100% !important; height: 100% !important; }
+.carrot-popup-frame { position: fixed !important; inset: 0px !important; z-index: 2147483000 !important; display: block !important; width: 100% !important; height: 100% !important; animation: 0.25s ease 0s 1 normal none running carrotquest-fadein !important; }
+@keyframes carrotquest-fadein { 
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.carrot-messenger-frame-container { position: fixed !important; top: 0px !important; z-index: 2147483000 !important; width: 370px !important; height: 100% !important; max-height: 100% !important; box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 18px, rgba(0, 0, 0, 0.05) 0px 0px 2px !important; }
+.carrot-messenger-frame-container.carrotquest-messenger-line-left { left: 0px !important; }
+.carrot-messenger-frame-container.carrotquest-messenger-line-right { right: 0px !important; }
+.carrot-messenger-frame-small-chat.carrot-messenger-frame-container.carrotquest-messenger-line-right { right: 27px !important; }
+.carrot-messenger-frame-small-chat.carrot-messenger-frame-container.carrotquest-messenger-line-left { left: 27px !important; }
+.carrot-messenger-frame-container.data-truncate-visibility { box-shadow: none !important; }
+.carrot-messenger-frame, .carrot-notification-frame, .carrot-popup-small-frame { width: 100% !important; height: 100% !important; }
+#carrot-notification-frame { width: 100%; }
+.carrotquest-messenger-mobile-chat { height: 100% !important; }
+.carrot-messenger-frame-small-chat { top: auto !important; bottom: 27px !important; height: calc(100% - 120px) !important; min-height: 250px !important; max-height: 620px !important; border-radius: 15px !important; }
+.carrot-messenger-frame-small-chat .carrot-messenger-frame { height: 100% !important; max-height: 100% !important; }
+.carrot-messenger-frame-mobile-chat, .carrot-messenger-frame-mobile-chat .carrot-messenger-frame { height: 100% !important; }
+.carrot-messenger-frame-small-chat .carrotquest-messenger-line-right { right: 50px !important; }
+.carrot-messenger-frame-small-chat .carrotquest-messenger-line-left { left: 50px !important; }
+@media only screen and (max-device-width: 667px), screen and (max-width: 450px) {
+  #carrot-messenger-frame { left: 0px !important; width: 100% !important; }
+  .carrot-messenger-frame-container { inset: 0px !important; z-index: 2147483001 !important; width: 100% !important; height: 100% !important; max-height: none !important; border-radius: 0px !important; }
+  .carrot-messenger-frame-container.data-truncate-visibility { margin-top: 0px !important; }
+  div.carrot-notification-container { right: 0px !important; }
+}
+@media screen and (max-height: 450px) {
+  .carrot-messenger-frame-container.data-truncate-visibility { min-height: 411px !important; margin-top: 0px !important; }
+}
+.carrotquest-messenger-line-anim { animation-name: carrotquest-messenger-line-anim-right !important; animation-duration: 0.15s !important; animation-timing-function: cubic-bezier(0, 0, 0.2, 1) !important; }
+@keyframes carrotquest-messenger-line-anim-right { 
+  0% { opacity: 0; transform: scale(0.6) translate(124px, 320px); }
+  100% { opacity: 1; transform: scale(1) translate(0px); }
+}
+.carrotquest-messenger-line-left { animation-name: carrotquest-messenger-line-anim-left !important; }
+@keyframes carrotquest-messenger-line-anim-left { 
+  0% { opacity: 0; transform: scale(0.6) translate(-124px, 320px); }
+  100% { opacity: 1; transform: scale(1) translate(0px); }
+}
+#carrot-frame-bumperCookies { position: fixed; bottom: 0px; left: 0px; width: 100%; box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 8px, rgba(0, 0, 0, 0.08) 0px 0px 2px; z-index: 2147482999 !important; }
+.carrot-notification-container { width: 330px; position: fixed !important; z-index: 2147483000 !important; min-width: 330px !important; max-height: 70vh !important; opacity: 1 !important; transform: translateY(0px) !important; transition: opacity 0.4s, transform 0.4s !important; }
+.carrot-notification-container.hidden { opacity: 0 !important; transform: translateY(90px) !important; }
+.carrot-messenger-embedded-frame-container { position: relative; height: 100% !important; width: 100% !important; }
+.carrot-messenger-embedded-frame-container .wrapper-calendly, .carrot-messenger-frame-container .wrapper-calendly { position: absolute; top: 0px; width: 100%; height: 100%; border: 1px solid rgb(255, 255, 255); border-radius: 15px; background-color: rgb(255, 255, 255); overflow: hidden; }
+.carrot-messenger-embedded-frame-container .wrapper-calendly #widget-header, .carrot-messenger-frame-container .wrapper-calendly #widget-header { height: 50px; }
+.carrot-messenger-embedded-frame-container .wrapper-calendly #back-to-chat, .carrot-messenger-frame-container .wrapper-calendly #back-to-chat { padding: 15px; cursor: pointer; }
+.carrot-messenger-embedded-frame-container .wrapper-calendly .calendly-inline-widget, .carrot-messenger-frame-container .wrapper-calendly .calendly-inline-widget { position: relative; width: 100%; height: calc(100% - 50px); }

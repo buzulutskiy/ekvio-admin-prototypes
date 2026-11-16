@@ -1,0 +1,10 @@
+.notifications { display: block; position: fixed; z-index: 5000; }
+.notification-wrapper { display: block; overflow: hidden; width: 100%; margin: 0px; padding: 0px; }
+.notification { display: block; box-sizing: border-box; background: rgb(255, 255, 255); text-align: left; }
+.notification-title { font-weight: 600; }
+.vue-notification { font-size: 12px; padding: 10px; margin: 0px 5px 5px; color: rgb(255, 255, 255); background: rgb(68, 164, 252); border-left: 5px solid rgb(24, 127, 231); }
+.vue-notification.warn { background: rgb(255, 182, 72); border-left-color: rgb(244, 138, 6); }
+.vue-notification.error { background: rgb(229, 77, 66); border-left-color: rgb(184, 46, 36); }
+.vue-notification.success { background: rgb(104, 205, 134); border-left-color: rgb(66, 168, 95); }
+.vn-fade-enter-active, .vn-fade-leave-active, .vn-fade-move { transition: 0.5s; }
+.vn-fade-enter, .vn-fade-leave-to { opacity: 0; }
