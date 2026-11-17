@@ -34,7 +34,7 @@
 .filter-study-coach .filter-study-task.is-complete { color: var(--ui-accent-strong); }
 .filter-study-coach .research-button.outline { border: 1px solid var(--ui-border); color: var(--ui-ink); background: var(--ui-surface); }
 .filter-study-coach .research-button.outline:hover { background: var(--ui-bg); }
-.research-highlight { position: fixed; z-index: 1000; pointer-events: none; border: 2px solid var(--ui-accent); border-radius: 14px; box-shadow: 0 0 0 4px var(--ui-accent-soft); box-sizing: border-box; }
+.research-highlight { position: fixed; z-index: 1000; pointer-events: none; border: 2px solid var(--ui-accent); border-radius: 14px; box-shadow: 0 0 0 100vmax rgb(17 24 39 / 46%); box-sizing: border-box; }
 .research-status { position: fixed; bottom: 20px; right: 20px; max-width: min(380px, calc(100vw - 40px)); padding: 12px 16px; background: var(--ui-ink); color: var(--ui-surface); border-radius: 12px; z-index: 1003; font: 13px/1.5 var(--ui-font); box-shadow: var(--ui-popup-shadow); }
 [data-research-blocked] { cursor: default !important; }
 @media (max-width: 620px) { .research-launcher { font-size: 12px; padding: 4px; } .research-coach { padding: 16px; } }

@@ -1,5 +1,29 @@
 (() => {
   'use strict';
+  // Keep utility columns fixed; distribute spare width among content columns.
+  const studyTable = document.querySelector('.table-surface .ek-table');
+  if (studyTable) {
+    const header = studyTable.querySelector('.ek-table__header');
+    const bases = [...header.querySelectorAll('th')].map(c => parseFloat(c.getAttribute('width')) || 100);
+    const minimum = bases.reduce((a,b) => a+b, 0);
+    const weights = bases.map((_,i) => i === 3 ? 4 : [8,10,11].includes(i) ? 2 : i > 3 ? 1 : 0);
+    const totalWeight = weights.reduce((a,b) => a+b, 0);
+    const fitTable = () => {
+      const width = Math.max(minimum, studyTable.clientWidth);
+      const widths = bases.map((b,i) => b + (width-minimum)*weights[i]/totalWeight);
+      for (const table of studyTable.querySelectorAll('.ek-table__header,.ek-table__body')) {
+        let cols = table.querySelector('colgroup');
+        if (!cols) { cols = document.createElement('colgroup'); table.prepend(cols); }
+        cols.replaceChildren(...widths.map(w => { const col=document.createElement('col'); col.style.width=`${w}px`; return col; }));
+        table.style.setProperty('width', `${width}px`, 'important');
+        table.style.setProperty('min-width', `${width}px`, 'important');
+      }
+      const wrapper = studyTable.querySelector('.ek-table__header-wrapper');
+      if (wrapper) wrapper.style.width = `${width}px`;
+    };
+    fitTable(); new ResizeObserver(fitTable).observe(studyTable);
+  }
+
   const $ = selector => document.querySelector(selector);
   const sessionKey = 'ekvio-filter-tour-progress-v2';
   let progress = {step: -1, savedId: '', savedName: '', finished: false};

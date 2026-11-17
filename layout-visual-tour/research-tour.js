@@ -1,5 +1,29 @@
 (() => {
   'use strict';
+  // Keep utility columns fixed; distribute spare width among content columns.
+  const studyTable = document.querySelector('.table-surface .ek-table');
+  if (studyTable) {
+    const header = studyTable.querySelector('.ek-table__header');
+    const bases = [...header.querySelectorAll('th')].map(c => parseFloat(c.getAttribute('width')) || 100);
+    const minimum = bases.reduce((a,b) => a+b, 0);
+    const weights = bases.map((_,i) => i === 3 ? 4 : [8,10,11].includes(i) ? 2 : i > 3 ? 1 : 0);
+    const totalWeight = weights.reduce((a,b) => a+b, 0);
+    const fitTable = () => {
+      const width = Math.max(minimum, studyTable.clientWidth);
+      const widths = bases.map((b,i) => b + (width-minimum)*weights[i]/totalWeight);
+      for (const table of studyTable.querySelectorAll('.ek-table__header,.ek-table__body')) {
+        let cols = table.querySelector('colgroup');
+        if (!cols) { cols = document.createElement('colgroup'); table.prepend(cols); }
+        cols.replaceChildren(...widths.map(w => { const col=document.createElement('col'); col.style.width=`${w}px`; return col; }));
+        table.style.setProperty('width', `${width}px`, 'important');
+        table.style.setProperty('min-width', `${width}px`, 'important');
+      }
+      const wrapper = studyTable.querySelector('.ek-table__header-wrapper');
+      if (wrapper) wrapper.style.width = `${width}px`;
+    };
+    fitTable(); new ResizeObserver(fitTable).observe(studyTable);
+  }
+
   const $ = selector => document.querySelector(selector);
   const isSettings = document.body.dataset.researchPage === 'settings';
   const root = new URL(isSettings ? '../' : './', location.href);
@@ -83,11 +107,18 @@
     coach.style.left = `${x}px`; coach.style.top = `${y}px`;
   };
   const queuePosition = () => { cancelAnimationFrame(layoutFrame); layoutFrame = requestAnimationFrame(position); };
+  const hasHorizontalOverflow = () => {
+    const table = $('.table-surface .ek-table');
+    return table && table.scrollWidth > table.clientWidth + 2;
+  };
+  const visibleSteps = () => steps.map((_, i) => i).filter(i => i !== 3 || (isSettings ? get('ekvio-study-overflow') !== 'false' : hasHorizontalOverflow()));
   const show = index => {
+    if (!isSettings && index === 3 && !hasHorizontalOverflow()) index = current > index ? 2 : 4;
     const step = steps[index];
     if (!step) return;
     if ((step.page === 'settings') !== isSettings) { travel(isSettings ? listURL : settingsURL, index); return; }
     current = index; set(activeKey, String(index));
+    if (!isSettings) set('ekvio-study-overflow', String(hasHorizontalOverflow()));
     document.body.classList.toggle('research-overview-open', index === 0);
     if (isSettings) {
       if (index === 5 || index === 6) window.scrollTo(0, 0);
@@ -98,7 +129,7 @@
       if (index === 4) { const table = $('.table-surface .ek-table'); table.scrollTop = 0; table.scrollLeft = 0; }
     }
     coach.classList.toggle('research-overview', index === 0);
-    coach.innerHTML = `<p class="research-eyebrow">${index + 1} из ${steps.length} · Обзор изменений</p><h2 id="research-step-title">${step.title}</h2><p id="research-step-text">${step.text}</p>${step.demo ? '<button type="button" class="research-button research-demo" data-demo>Показать прокрутку вправо</button>' : ''}<div class="research-actions"><button type="button" class="research-button ghost" data-prev ${index === 0 ? 'disabled' : ''}>Назад</button><button type="button" class="research-button primary" data-next>${step.next || 'Далее'}</button></div><span class="research-explore">Пробуйте интерфейс, затем продолжайте обзор.</span>`;
+    coach.innerHTML = `<p class="research-eyebrow">${visibleSteps().indexOf(index) + 1} из ${visibleSteps().length} · Обзор изменений</p><h2 id="research-step-title">${step.title}</h2><p id="research-step-text">${step.text}</p>${step.demo ? '<button type="button" class="research-button research-demo" data-demo>Показать прокрутку вправо</button>' : ''}<div class="research-actions"><button type="button" class="research-button ghost" data-prev ${index === 0 ? 'disabled' : ''}>Назад</button><button type="button" class="research-button primary" data-next>${step.next || 'Далее'}</button></div><span class="research-explore">Пробуйте интерфейс, затем продолжайте обзор.</span>`;
     coach.hidden = false; position(); coach.focus({ preventScroll: true }); requestAnimationFrame(position);
   };
   launcher.addEventListener('click', () => { previousFocus = launcher; stop(false); intro.showModal(); });
@@ -154,7 +185,7 @@
   }, true);
   window.addEventListener('scroll', queuePosition, { passive: true });
   document.addEventListener('scroll', queuePosition, { capture: true, passive: true });
-  window.addEventListener('resize', queuePosition);
+  window.addEventListener('resize', () => { requestAnimationFrame(() => { if (!isSettings && current === 3 && !hasHorizontalOverflow()) show(4); else queuePosition(); }); });
   new ResizeObserver(queuePosition).observe(document.body);
   $('.refresh-sidebar').addEventListener('transitionend', queuePosition);
   window.addEventListener('pageshow', event => {
